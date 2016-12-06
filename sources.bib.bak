@@ -29,14 +29,61 @@
   urldate = {2016-11-22},
 }
 
-@Misc{Ploetz2016,
-  author       = {Henryk Plötz},
+@Misc{Plotz2015,
+  author       = {Henryk Pl"otz},
   title        = {{QRtistry - Dissecting and Constructing QR codes}},
   year         = {2015},
   date         = {2016-11-10},
   howpublished = {Video},
   url          = {https://media.ccc.de/v/32c3-7310-qrtistry#video&t=0},
   urldate      = {2016-11-10},
+}
+
+@Misc{Mik2013,
+  author       = {{Mik 0}},
+  title        = {Codabar example},
+  year         = {2013},
+  date         = {2013-10-22},
+  subtitle     = {CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=5821291},
+  howpublished = {Bild},
+  type         = {Bild},
+  url          = {https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Codabar-example.svg/2000px-Codabar-example.svg.png},
+  urldate      = {2016-12-06},
+  timestamp    = {2016-12-06},
+}
+
+@Misc{brdall2009,
+  author       = {brdall},
+  title        = {qrcode for http://en.m.wikipedia.org},
+  year         = {2009},
+  date         = {2009-04-07},
+  howpublished = {Bild},
+  type         = {Bild},
+  url          = {https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/1024px-Wikipedia_mobile_en.svg.png},
+  urldate      = {2016-12-06},
+}
+
+@Misc{Sakurambo2007,
+  author       = {Sakurambo},
+  title        = {An EAN-13 barcode},
+  year         = {2007},
+  date         = {2007-05-15},
+  howpublished = {Bild},
+  url          = {https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/EAN-13-5901234123457.svg/2000px-EAN-13-5901234123457.svg.png},
+  urldate      = {2016-12-06},
+}
+
+@Book{SWB-379083930,
+  author    = {Lenk, Bernhard},
+  title     = {QR Code : [mit 26 Tabellen]},
+  year      = {2012},
+  edition   = {1. Aufl., Stand 1. Okt. 2012},
+  publisher = {Lenk},
+  isbn      = {978-3-935551-10-6},
+  address   = {Kirchheim unter Teck},
+  bestand   = {Württembergische Landesbibliothek <24> [Signatur: 64/5851]; Karlsruher Institut für Technologie (KIT) - KIT-Bibliothek <90> [Signatur: 2013 A 1479]; Badische Landesbibliothek <31>; Kommunikations- u. Informationszentrum Universität Ulm (kiz) <289> [Signatur: QAA 177/2012 L]; Hochschulbibliothek Konstanz - <Kon 4> [Signatur: ibd1/78]; Berufsakademie Sachsen, Staatliche Studienakademie <Brt 1>; Duale Hochschule Baden-Württemberg Mosbach <941> [Signatur: ST 330 4]; Duale Hochschule Baden-Württemberg Heidenheim <Hed 2> [Signatur: Z 100/ Lenk]; },
+  keywords  = {QR-Code ; Mobile computing / Bar coding / Marketing ; QR-Code / Strichcode},
+  size      = {355 S. : Ill., graph. Darst. ; 170 mm x 240 mm, 805 g},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
