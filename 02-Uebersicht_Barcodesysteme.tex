@@ -5,7 +5,7 @@ Zur Zeit befinden sich viele verschiedene Barcodesysteme in Benutzung. Manche si
 Eindimensionale Barcodes codieren Daten entlang ihrer Länge (also links und rechts); nicht ihrer Höhe (also oben und unten). Würde man nun eine Linie durch einen eindimensionalen Barcode ziehen, findet man diese Dimension. Dieses Vorgehen nutzen die meisten der verwendeten Laserscanner. Dass eindimensionale Barcodes meist sehr groß abgedruckt sind hat einen einfachen Grund: Je größer der Code, desto einfacher findet ihn ein Scanner.
 
 \subsubsection{Strichcode}
-\begin{wrapfigure}[7]{r}{0.45\textwidth}
+\begin{wrapfigure}[7]{r}[0.75cm]{0.4\textwidth}
 	\centering
 	\vspace{-0.2cm}
 \includegraphics[width=0.25\textwidth]{Bilder/EAN_13.png}
@@ -14,7 +14,6 @@ Eindimensionale Barcodes codieren Daten entlang ihrer Länge (also links und rec
 	\label{barcode}
 \end{wrapfigure}
 \footnotetext[1]{Quelle: \cite{Sakurambo2007}} 
-%TODO
 Für den Strichcode gibt es seit 1993 vier europäische Standards, die sich durch Einsatzgebiet (Handel/Industrie), Zeichenvorrat und Zeichensatz unterscheiden: ISO 15420 (EAN), ISO 15417 (Code 128), ISO 16388 (Code 39) und ISO 16390 (Code 2/5 Interleaved).
 Der Strichcode wird vielfältig eingesetzt und heißt je nach Einsatzgebiet auch anders. Im Handel kennt man ihn unter der Bezeichnung EAN (European Article Number), in den Bereichen Materialfluss, Logistik und Lager als EAN128.
 
@@ -33,7 +32,7 @@ Nachteil: Es benötigt eher eine Kamera als einen Laserscanner, um den Code zu l
 \samepage
 \paragraph{QR-Code}~
 
-\begin{wrapfigure}[7]{l}{0.35\textwidth}
+\begin{wrapfigure}[7]{l}[0.5cm]{0.3\textwidth}
 	\centering
 	\vspace{-0.65cm}
 	\includegraphics[width=0.2\textwidth]{Bilder/QR_Code.png}
@@ -44,7 +43,33 @@ Nachteil: Es benötigt eher eine Kamera als einen Laserscanner, um den Code zu l
 \footnotetext[2]{Quelle: \cite{brdall2009}}
 Der QR-Code (ausgeschrieben \textit{Quick-Response}) wurde 1994 von der japanischen Firma Denso entwickelt. Heute wird er hauptsächlich in der Automobilindustrie und als Smartphone-Code verwendet; hier vor allem für Mobile Ticketing beziehungsweise Mobile Marketing. Diese mobile Anwendung ist auch auf seine hohe Fehlertoleranz zurückzuführen. Da der QR-Code den Hauptteil dieser Arbeit ausmachen soll, finden sich weiter Informationen und Details im entsprechenden Kapitel.
 
-\paragraph{Data Matrix}
+\paragraph{DataMatrix}~
+
+\begin{wrapfigure}[6]{r}[0.9cm]{0.33\textwidth}
+	\centering
+	\vspace{-0.65cm}
+	\includegraphics[width=0.19\textwidth]{Bilder/DataMatrix.png} 
+	%TODO Bild DataMatrix einfügen
+	\vspace{-0.2cm}
+	\caption[DataMatrix]{DataMatrix\footnotemark}
+	\label{datamatrix}	
+\end{wrapfigure}
+\footnotetext[3]{Quelle: \cite[25]{DatalogicScanning2007} }%TODO Referenz fixen
+Der DataMatrix-Code (siehe Abbildung~\ref{dataMatrix}) wurde gegen Ende der 1980er Jahre von der amerikanischen Firma Acuity Corp entwickelt. Da auch er eine hohe Fehlertoleranz aufweist, wird er heute vor allem zur Markierung kleiner Dinge verwendet, z.B. in der Produktion von Leiterplatten oder im Automobilbau. Die eingebaute Fehlerkorrektur verwendet den leistungsfähigen Reed-Solomon-Algorithmus. Innerhalb einer DataMatrix können bis zu 2335 Zeichen fixer Länge gespeichert werden.
+
+\paragraph{Aztec Code}~
+
+\begin{wrapfigure}[6]{r}[0.9cm]{0.33\textwidth}
+	\centering
+	\vspace{-0.65cm}
+	\includegraphics[width=0.19\textwidth]{Bilder/DataMatrix.png} 
+	%TODO Bild DataMatrix einfügen
+	\vspace{-0.2cm}
+	\caption[DataMatrix]{DataMatrix\footnotemark}
+	\label{datamatrix}	
+\end{wrapfigure}
+\footnotetext[4]{Quelle: }%TODO Aztec Code samt Quelle einbinden
+Der Aztec-Code wurde im Jahr 1995 in der amerikanischen Firma Welch Allyn entwickelt. Er ist normiert (ISO/IEC 24778) und wurde in Anlehnung an die Hochkultur der Azteken benannt, da die charakteristischen Quadrate in der Codemitte an eine aztekische Stufenpyramide aus der Vogelperspektive erinnern. Auch der Aztec-Code ist sehr Fehlertolerant (je nach Anwendungsfall können Daten auch bei einer Zerstörung von bis zu 40\% des Codes rekonstruiert werden). Er wird hauptsächlich in den Bereich Transport, Logistik und Verwaltung eingesetzt und dürften den meisten Lesern von den (mobilen) Fahrkarten der Deutschen Bahn bekannt sein, da der Internationale Eisenbahnverband \textit{UIC} den Aztec-Code als Standard für Fahrkarten definiert hat. %TODO Quelle
 
 
 \subsection{Dreidimensionale Barcodes}
