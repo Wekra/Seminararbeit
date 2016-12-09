@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,bibliography=totocnumbered,listof=totocnumbered]{scrartcl}
 
 \input{pakete.tex}
-
+\addbibresource{sources.bib}
 \begin{document}
 
 \input{formatierung.tex}
@@ -70,8 +70,9 @@
 % Literatur
 % ----------------------------------------------------------------------------------------------------------
 \renewcommand\refname{Quellenverzeichnis}
-\bibliographystyle{alpha}
-\bibliography{sources}
+\printbibliography
+%\bibliographystyle{alpha}
+%\bibliography{sources}
 \pagebreak
 
 % ----------------------------------------------------------------------------------------------------------

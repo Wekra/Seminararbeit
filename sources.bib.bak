@@ -129,7 +129,7 @@
 
 @Misc{zayani2009,
   author       = {zayani},
-  title        = {{An HCCB Tag that is encoded with the URI "http://en.wikipedia.org/wiki/High_Capacity_Color_Barcode"}},
+  title        = {{An HCCB Tag that is encoded with the URI https://en.wikipedia.org/wiki/High_Capacity_Color_Barcode}},
   year         = {2009},
   date         = {2009-01-28},
   howpublished = {Bild},
