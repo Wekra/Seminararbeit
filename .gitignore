@@ -10,3 +10,7 @@
 /Abschlussarbeit.toc
 out/
 *.log
+*.bcf
+*.run.xml
+*.synctex.gz
+*.bib.sav
