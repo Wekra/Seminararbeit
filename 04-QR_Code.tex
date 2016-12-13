@@ -1,5 +1,5 @@
 \section{QR-Codes}\label{chap:qrcodes}
-Dieses Kapitel dreht sich um QR-Codes; allgemeine Informationen, wie werden eigentlich die Daten codiert beziehungsweise decodiert und wie läuft das überhaupt mit der Fehlerkorrektur?
+Dieses Kapitel dreht sich um QR-Codes; allgemeine Informationen, wie werden eigentlich die Daten codiert beziehungsweise decodiert und kann man mit QR-Codes auch künstlerisch arbeiten?
 
 \subsection{Allgemeines}
 Wie bereits in Kapitel~\ref{chap:history} und \ref{chap:overview} erwähnt, wurde der QR-Code 1994 von der japanischen Firma \textit{DENSO Corporation} (gegründet 1949 als \textit{Nippondenso Co. Ltd.}) entwickelt. Wie der ausgeschriebene Name \textbf{Q}uick \textbf{R}esponse (schnelle Antwort) erwarten lässt, zeichnet sich der QR-Code vor allem durch die sehr schnelle Lesbarkeit aus. Diese ist in dem markanten Suchmuster des Codes begründet, welches gleichzeitig auch zur Lageerkennung verwendet wird.
@@ -40,6 +40,19 @@ Im weiteren Verlauf dieses Kapitels wird der QR-Code 2005 als Grundlage für all
 \footnotetext{Quelle: \cite[4]{Lenk2012}}
 
 \subsection{Daten codieren}
-Wie aber wird nun 
+Wie aber wird nun ein Text, eine Nummer oder auch eine URL in einem QR-Code codiert? Bevor dieser Prozess genauer beleuchtet wird, soll kurz die \glqq Anatomie\grqq~eines QR-Codes vorgestellt werden. In Abbildung~\ref{fig:qranatomy} sind die wichtigsten visuellen Merkmale eines Codes farbig hervorgehoben worden. Das rote Quadrat, welches der Grundbaustein des QR-Codes ist, nennt man Modul. Insgesamt besitzt der Code eine quadratische Matrixstruktur mit hellen und dunklen Modulen, welche jeweils ein Bit repräsentieren. Die Matrix ist immer ungerade und bewegt sich im Bereich von 21 x 21 bis 177 x 177. Insgesamt gibt es 40 verschiedene Matrix-Versionen (1 bis 40), die von einer zur nächsten um jeweils 4 Zellen an jeder Seite erweitert wird.\\
+Die großen, grün hervorgehobenen Vierecke in den drei Ecken nennt man Suchmuster. Sie dienen zum schnellen Auffinden des Codes im Leseprozess. Drei Ecken deshalb, um eine Eindeutigkeit des omnidirektional lesbaren Codes zu garantieren. Zudem lassen sich durch die Quadrate auch Verzerrungen des Codes erkennen. Der Rahmen des inneren Quadrates ist genau so breit wie ein Modul. Das innere Quadrat besitzt die Breite 3 x 3 Module. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=5cm]{Bilder/QR_Code_Anatomie.png}
+	\caption[Anatomie eines QR-Codes]{Anatomie eines QR-Codes\footnotemark}
+	\label{fig:qranatomy}
+	\hfill
+\end{figure}
+\footnotetext{Quelle: \cite{Plotz2015}}
+
+Die blau hinterlegten Zellen markieren die sogenannten Taktzellen. Diese zeigen dem Scanner an, wie groß die Matrix ist.
+
 
 \pagebreak
