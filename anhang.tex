@@ -8,10 +8,64 @@
 	\addcontentsline{toc}{section}{Anhang}
 	\addtocontents{toc}{\vspace{-0.5em}}
 
-	\section{GUI}
-	Ein toller Anhang.
+	\section{Tabellen}
 
-	\subsection*{Screenshot}
-	\label{app:screenshot}
-	Unterkategorie, die nicht im Inhaltsverzeichnis auftaucht.
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Version} & \textbf{\begin{tabular}[c]{@{}l@{}}Matrix-\\ größe\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Anzahl\\ Daten-\\ codeworte\end{tabular}} & \textbf{Version} & \textbf{\begin{tabular}[c]{@{}l@{}}Matrix-\\ größe\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Anzahl \\ Daten-\\ codeworte\end{tabular}} \\ \hline
+			1                & 21x21                                                            & 26                                                                           & 21               & 101x101                                                          & 1156                                                                          \\ \hline
+			2                & 25x25                                                            & 44                                                                           & 22               & 105x105                                                          & 1258                                                                          \\ \hline
+			3                & 29x29                                                            & 70                                                                           & 23               & 109x109                                                          & 1364                                                                          \\ \hline
+			4                & 33x33                                                            & 100                                                                          & 24               & 113x113                                                          & 1474                                                                          \\ \hline
+			5                & 37x37                                                            & 134                                                                          & 25               & 117x117                                                          & 1588                                                                          \\ \hline
+			6                & 41x41                                                            & 172                                                                          & 26               & 121x121                                                          & 1706                                                                          \\ \hline
+			7                & 45x45                                                            & 196                                                                          & 27               & 125x125                                                          & 1828                                                                          \\ \hline
+			8                & 49x49                                                            & 242                                                                          & 28               & 129x129                                                          & 1921                                                                          \\ \hline
+			9                & 53x53                                                            & 292                                                                          & 29               & 133x133                                                          & 2051                                                                          \\ \hline
+			10               & 57x57                                                            & 346                                                                          & 30               & 137x137                                                          & 2185                                                                          \\ \hline
+			11               & 61x61                                                            & 404                                                                          & 31               & 141x141                                                          & 2323                                                                          \\ \hline
+			12               & 65x65                                                            & 466                                                                          & 32               & 145x145                                                          & 2465                                                                          \\ \hline
+			13               & 69x69                                                            & 532                                                                          & 33               & 149x149                                                          & 2611                                                                          \\ \hline
+			14               & 73x73                                                            & 581                                                                          & 34               & 153x153                                                          & 2761                                                                          \\ \hline
+			15               & 77x77                                                            & 655                                                                          & 35               & 157x157                                                          & 2876                                                                          \\ \hline
+			16               & 81x81                                                            & 733                                                                          & 36               & 161x161                                                          & 3034                                                                          \\ \hline
+			17               & 85x85                                                            & 815                                                                          & 37               & 165x165                                                          & 3196                                                                          \\ \hline
+			18               & 89x89                                                            & 901                                                                          & 38               & 169x169                                                          & 3362                                                                          \\ \hline
+			19               & 93x93                                                            & 991                                                                          & 39               & 173x173                                                          & 3532                                                                          \\ \hline
+			20               & 97x97                                                            & 1085                                                                         & 40               & 177x177                                                          & 3706                                                                          \\ \hline
+		\end{tabular}
+		\caption[Matrixgrößen und Anzahl der Codeworte für den QR Code 2005]{Matrixgrößen und Anzahl der Codeworte für den QR Code 2005\footnotemark}
+		\label{tab:matrixwidth}
+	\end{table}
+	\footnotetext{Quelle: \cite[100]{Lenk2012}}
+\pagebreak
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{cccccccc}
+			\hline
+			\multicolumn{1}{|c|}{\textbf{Zeichen}} & \multicolumn{1}{c|}{\textbf{Wert}} & \multicolumn{1}{c|}{\textbf{Zeichen}} & \multicolumn{1}{c|}{\textbf{Wert}} & \multicolumn{1}{c|}{\textbf{Zeichen}} & \multicolumn{1}{c|}{\textbf{Wert}} & \multicolumn{1}{c|}{\textbf{Zeichen}} & \multicolumn{1}{c|}{\textbf{Wert}} \\ \hline
+			\multicolumn{1}{|c|}{0}                & \multicolumn{1}{c|}{0}             & \multicolumn{1}{c|}{A}                & \multicolumn{1}{c|}{10}            & \multicolumn{1}{c|}{K}                & \multicolumn{1}{c|}{20}            & \multicolumn{1}{c|}{U}                & \multicolumn{1}{c|}{30}            \\ \hline
+			\multicolumn{1}{|c|}{1}                & \multicolumn{1}{c|}{1}             & \multicolumn{1}{c|}{B}                & \multicolumn{1}{c|}{11}            & \multicolumn{1}{c|}{L}                & \multicolumn{1}{c|}{21}            & \multicolumn{1}{c|}{V}                & \multicolumn{1}{c|}{31}            \\ \hline
+			\multicolumn{1}{|c|}{2}                & \multicolumn{1}{c|}{2}             & \multicolumn{1}{c|}{C}                & \multicolumn{1}{c|}{12}            & \multicolumn{1}{c|}{M}                & \multicolumn{1}{c|}{22}            & \multicolumn{1}{c|}{W}                & \multicolumn{1}{c|}{32}            \\ \hline
+			\multicolumn{1}{|c|}{3}                & \multicolumn{1}{c|}{3}             & \multicolumn{1}{c|}{D}                & \multicolumn{1}{c|}{13}            & \multicolumn{1}{c|}{N}                & \multicolumn{1}{c|}{23}            & \multicolumn{1}{c|}{X}                & \multicolumn{1}{c|}{33}            \\ \hline
+			\multicolumn{1}{|c|}{4}                & \multicolumn{1}{c|}{4}             & \multicolumn{1}{c|}{E}                & \multicolumn{1}{c|}{14}            & \multicolumn{1}{c|}{O}                & \multicolumn{1}{c|}{24}            & \multicolumn{1}{c|}{Y}                & \multicolumn{1}{c|}{34}            \\ \hline
+			\multicolumn{1}{|c|}{5}                & \multicolumn{1}{c|}{5}             & \multicolumn{1}{c|}{F}                & \multicolumn{1}{c|}{15}            & \multicolumn{1}{c|}{P}                & \multicolumn{1}{c|}{25}            & \multicolumn{1}{c|}{Z}                & \multicolumn{1}{c|}{35}            \\ \hline
+			\multicolumn{1}{|c|}{6}                & \multicolumn{1}{c|}{6}             & \multicolumn{1}{c|}{G}                & \multicolumn{1}{c|}{16}            & \multicolumn{1}{c|}{Q}                & \multicolumn{1}{c|}{26}            & \multicolumn{1}{c|}{SPACE}            & \multicolumn{1}{c|}{36}            \\ \hline
+			\multicolumn{1}{|c|}{7}                & \multicolumn{1}{c|}{7}             & \multicolumn{1}{c|}{H}                & \multicolumn{1}{c|}{17}            & \multicolumn{1}{c|}{R}                & \multicolumn{1}{c|}{27}            & \multicolumn{1}{c|}{\$}                & \multicolumn{1}{c|}{37}            \\ \hline
+			\multicolumn{1}{|c|}{8}                & \multicolumn{1}{c|}{8}             & \multicolumn{1}{c|}{I}                & \multicolumn{1}{c|}{18}            & \multicolumn{1}{c|}{S}                & \multicolumn{1}{c|}{28}            & \multicolumn{1}{c|}{\%}               & \multicolumn{1}{c|}{38}            \\ \hline
+			\multicolumn{1}{|c|}{9}                & \multicolumn{1}{c|}{9}             & \multicolumn{1}{c|}{J}                & \multicolumn{1}{c|}{19}            & \multicolumn{1}{c|}{T}                & \multicolumn{1}{c|}{29}            & \multicolumn{1}{c|}{*}                & \multicolumn{1}{c|}{39}            \\ \hline
+			&                                    &                                       &                                    &                                       &                                    &                                       &                                    \\ \hline
+			\multicolumn{1}{|c|}{+}                & \multicolumn{1}{c|}{40}            & \multicolumn{1}{c|}{.}                & \multicolumn{1}{c|}{42}            & \multicolumn{1}{c|}{:}                & \multicolumn{1}{c|}{44}            & \multicolumn{1}{c|}{}                 & \multicolumn{1}{c|}{}              \\ \hline
+			\multicolumn{1}{|c|}{-}                & \multicolumn{1}{c|}{41}            & \multicolumn{1}{c|}{/}                & \multicolumn{1}{c|}{43}            & \multicolumn{1}{c|}{}                 & \multicolumn{1}{c|}{}              & \multicolumn{1}{c|}{}                 & \multicolumn{1}{c|}{}              \\ \hline
+		\end{tabular}
+		\caption[Referenztabelle alphanumerischer Zeichensatz für den QR Code 2005]{Referenztabelle alphanumerischer Zeichensatz für den QR Code 2005\footnotemark}
+		\label{tab:refalphanum}
+	\end{table}
+	\footnotetext{Quelle: \cite[96]{Lenk2012}}
+
+%	\subsection*{Screenshot}
+%	\label{app:screenshot}
+%	Unterkategorie, die nicht im Inhaltsverzeichnis auftaucht.
 \end{appendix}
