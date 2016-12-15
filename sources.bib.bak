@@ -33,7 +33,7 @@
   author       = {Henryk Pl"otz},
   title        = {{QRtistry - Dissecting and Constructing QR codes}},
   year         = {2015},
-  date         = {2016-11-10},
+  date         = {2015-12-29},
   howpublished = {Video},
   url          = {https://media.ccc.de/v/32c3-7310-qrtistry#video&t=0},
   urldate      = {2016-11-10},
@@ -159,6 +159,17 @@
   language     = {Deutsch},
   organization = {Unglaube GmbH},
   urldate      = {2016-12-08},
+}
+
+@TechReport{ISO2000,
+  author      = {ISO},
+  title       = {Information technology — Automatic identification and data capture techniques — Bar code symbology — QR Code},
+  institution = {International Organization for Standardization},
+  year        = {2000},
+  date        = {2000-06-15},
+  type        = {ISO},
+  number      = {18004:2000},
+  address     = {Geneva, Switzerland},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
