@@ -1,5 +1,5 @@
 \section{QR-Codes}\label{chap:qrcodes}
-Dieses Kapitel dreht sich um QR-Codes; allgemeine Informationen, wie werden eigentlich die Daten codiert beziehungsweise decodiert und kann man mit QR-Codes auch künstlerisch arbeiten?
+Dieses Kapitel dreht sich um QR-Codes. Es enthält allgemeine Informationen sowie eine Beschreibung, wie Nutzdaten auf einen QR-Code codiert beziehungsweise aus ihm decodiert werden.
 
 \subsection{Allgemeines}
 Wie bereits in Kapitel~\ref{chap:history} und \ref{chap:overview} erwähnt, wurde der QR-Code 1994 von der japanischen Firma \textit{DENSO Corporation} (gegründet 1949 als \textit{Nippondenso Co. Ltd.}) entwickelt. Wie der ausgeschriebene Name \textbf{Q}uick \textbf{R}esponse (schnelle Antwort) erwarten lässt, zeichnet sich der QR-Code vor allem durch die sehr schnelle Lesbarkeit aus. Diese ist in dem markanten Suchmuster des Codes begründet, welches gleichzeitig auch zur Lageerkennung verwendet wird.
@@ -138,9 +138,10 @@ Diese 15 maskierten Bits werden zwei mal in der Matrix eingesetzt: einmal links 
 	\label{fig:formatinformationpositioning}
 	\hfill
 \end{figure}
-\footnotetext{Quelle: \cite[54]{ISO18004}}~\\
+~\\
 
-Verwendet man einen QR-Code der Version 7 und höher, muss zusätzlich noch die Versionsnummer innerhalb der Matrix codiert werden. Sie wird in insgesamt 18 Bits codiert, von denen 6 Bits die Versionsnummer enthalten (z.B. 7 wird in 000111 codiert) und die restlichen 12 wieder der Fehlerkorrektion dienen und mit BCH(18,6) berechnet werden. Der resultierende Bit-String wird in diesem Fall nicht maskiert und nach Abbildung~\ref{fig:versioninformationpositioning} in einem 3 x 6 und einem 6 x 3 Modulblock positioniert.\\
+Verwendet man einen QR-Code der Version 7 und höher, muss zusätzlich noch die Versionsnummer innerhalb der Matrix codiert werden. 
+\footnotetext{Quelle: \cite[54]{ISO18004}}Sie wird in insgesamt 18 Bits codiert, von denen 6 Bits die Versionsnummer enthalten (z.B. 7 wird in 000111 codiert) und die restlichen 12 wieder der Fehlerkorrektion dienen und mit BCH(18,6) berechnet werden. Der resultierende Bit-String wird in diesem Fall nicht maskiert und nach Abbildung~\ref{fig:versioninformationpositioning} in einem 3 x 6 und einem 6 x 3 Modulblock positioniert.\\
 %\vspace{-0.7cm}
 \begin{figure}[htbp]
 	\centering
@@ -165,26 +166,90 @@ Die Tripel werden nun in 8 Bit gewandelt, das restliche Paar nur in 7: \\
 \centerline{$012_{10}~\rightarrow~0000001100_2$}
 \centerline{$345_{10}~\rightarrow~0101011001_2$}
 \centerline{$~67_{10}~\rightarrow~~~~1000011_2$}\\
-Nun wird noch die Anzahl der Stellen (8) nach Tabelle~\ref{tab:encodenumberofcharacters} in 10 Bit gewandelt:
+Nun wird noch die Anzahl der Stellen (8) nach Tabelle~\ref{tab:encodenumberofcharacters} in 10 Bit gewandelt:~\\
 \centerline{$8_{10}~\rightarrow~0000001000_2$}\\
-Verkettet man nun Betriebsmodus (Numerik), Stellenzahl, die binären Nutzdaten und den Terminator, ergibt sich folgender Datenstring:
-\centerline{$0001~~0000001000~~000001100~0101011001~1000011~~0000$}
-
+Verkettet man nun Betriebsmodus (Numerik), Stellenzahl, die binären Nutzdaten und den Terminator, ergibt sich folgender Datenstring:~\\
+\centerline{$0001~~0000001000~~000001100~0101011001~1000011~~0000$}\\
 Da bereits festgestellt wurde, dass der QR-Code 16 DCW enthält, muss dieser Datenstring nun in 8er-Blöcke aufgeteilt und auf 16 DCW aufgefüllt werden:\\
 Gruppieren:\\
 \centerline{$00010000~00100000~00001100~01010110~01100001~10000$}\\
 plus 000 zum Auffüllen auf 8 Bit:\\
 \centerline{$00010000~00100000~00001100~01010110~01100001~10000000$}\\
 
-Somit ergeben sich 6 DCW. Da wir aber 16 DCW belegen müssen, werden einfach abwechselnd die beiden FCW 11101100 und 00010001 hinzugefügt (Zeile 2 und 3):\\
+Somit ergeben sich 6 DCW. Da wir aber 16 DCW belegen müssen, werden einfach abwechselnd die beiden FCW 11101100 und 00010001 hinzugefügt (Zeile 2 und 3):~\\
 \centerline{$00010000~00100000~00001100~01010110~01100001~10000000$}
 \centerline{$11101100~00010001~11101100~00010001~11101100~00010001$}
 \centerline{$11101100~00010001~11101100~00010001~~~~~~~~~~~~~~~~~~~~~~~~~~$}
  
 \textbf{3. FKCW nach Reed-Solomon berechnen und umwandeln:}\\
-Das Ergebnis der Polynomrechnung sieht folgendermaßen aus:\hfill \linebreak
+Das Ergebnis der Polynomrechnung sieht folgendermaßen aus:\hfill ~\\
 \centerline{$10100101~00100100~11010100~11000001~11101101~00110110$}
 \centerline{$11000111~10000111~00101100~01010101~~~~~~~~~~~~~~~~~~~~~~~~~~$}
 
+\textbf{4. Verschränken der DCW und der FKCW:}\\
+Nun da die Daten als Bit-String vorliegen und aufgefüllt wurden und auch die FKCW nach Reed-Solomon bestimmt wurden, werden nun beide Bit-Strings einfach hintereinander gehängt:\\
+CW 1\\
+\centerline{$00010000~00100000~00001100~01010110~01100001~10000000$}
+\centerline{$11101100~00010001~11101100~00010001~11101100~00010001$}
+\centerline{$11101100~00010001~11101100~00010001~10100101~00100100$}
+\centerline{$11010100~11000001~11101101~00110110~11000111~10000111$}
+\centerline{$00101100~01010101~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$}
+bis CW 26
 
+\textbf{5. Einsetzen der Codewörter in die Matrix}\\
+Wie in Abbildung~\ref{fig:filldata} dargestellt, werden dann die Daten als Blöcke einfach beginnend rechts unten und dann im Zick-Zack (den Pfeilen folgend) nach links in die Matrix gefüllt. Die Blöcke kommen dabei direkt nacheinander und werden nur an den blau markierten Stellen durch die Taktzellen unterbrochen. Die rechte der beiden Matrix-Abbildungen zeigt die mit Daten gefüllte Matrix.
+\begin{figure}[htbp]
+	\parbox{.47\textwidth}
+	{
+		\centering
+		\includegraphics[height=4.8cm]{Bilder/QR_Fill_Data_Start_1.png}
+	}
+	\hfill
+	\parbox{.47\textwidth}
+	{
+		\centering
+		\includegraphics[height=4.8cm]{Bilder/QR_Fill_Data_End.png}
+		%\caption[Drehwinkel]{Drehwinkel\textsuperscript{\ref{ftn:first}}}
+		%\label{fig:drehwinkel}
+	}
+\caption[Füllen der Matrix mit Daten]{Füllen der Matrix mit Daten\footnotemark}
+\label{fig:filldata}
+	\hfill
+\end{figure}
+~\\
+
+\textbf{6. Maskieren des Datenbereichs:}\\
+Nun wird der Datenbereich mit allen Masken maskiert und evaluiert, welche die geringste Anzahl an Strafpunkten verursacht. Im vorliegenden Fall ist das die Maske 2, die mit 010 codiert wird.
+
+\textbf{7. Formatinformationen hinzufügen:}
+Im letzten Schritt werden dann die Formatinformationen gesammelt, codiert und zusammen mit den 
+Suchmustern, den Taktzellen und dem fixen dunklen Modul eingesetzt.
+
+Die 15 Bit Formatinformation werden wie folgt zusammengesetzt:\\
+2 Bit Fehlerkorrekturmodus $\rightarrow$ hier M $\rightarrow$ 00 \\
+3 Bit Maske  $\rightarrow$ hier Maske 2  $\rightarrow$ 010 \\
+Die restlichen 10 Bit zur Fehlerkorrektur dieser Formatinformationen werden nach BCH(15,5) ermittelt und lauten im vorliegenden Beispiel 1001101110.\footnotetext{Quelle: \cite[201,216]{Lenk2012}}
+Somit ergibt sich der 15 Bit-String 000101001101110.\\
+Dieser wird anschließend noch mit der Maske 101010000010010 ver-XOR-t:\\
+\centerline{XOR: 000101001101110}
+\centerline{~~~~~~~~~101010000010010}
+\centerline{$\rightarrow$~~~~~~101111001111100}\\
+Mit der abschließend hinzugefügten Ruhezone ist der Code nun fertig aufgebaut (siehe Abbildung~\ref{fig:qrexamplefinal}).
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=5cm]{Bilder/QR_Example_Final.png}
+	\caption[Fertiger QR-Code mit den Nutzdaten 01234567]{Fertiger QR-Code mit den Nutzdaten 01234567\footnotemark}
+	\label{fig:qrexamplefinal}
+\end{figure}
+\footnotetext{Quelle: \cite[226]{Lenk2012}}~\pagebreak
+
+\subsection{Daten lesen}
+Besitzt man das Wissen, wie ein QR-Code aufgebaut ist und sein Inhalt codiert wird, so ist es eine recht einfache Übung, dieses Wissen in umgekehrter Reihenfolge anzuwenden und so einen gegebenen QR-Code zu decodieren.\\
+Zu Beginn des Vorgangs muss zuerst einmal ermittelt werden, wie groß der gegebene Code ist und somit, von welcher Version er ist. Diese Information kann anhand des Abstandes zwischen den Suchmustern sowie mithilfe der Taktzellen recht einfach festgestellt werden.\\
+Im nächsten Schritt wird der Formatinformations-Bit-String ausgelesen und mit der Maske 101010000010010 und XOR demaskiert. So erhält man den Fehlerkorrekturmodus und die Nummer der Maske, welche zur Maskierung der Daten benutzt wurde.\\
+Diese muss wieder mit Hilfe von XOR von den Daten entfernt werden, um an die realen Datenbits zu kommen.\\
+Aus der Versionsnummer ist nun ersichtlich, wie viele Codewörter im Datenbereich insgesamt vorhanden sind. Durch den Fehlerkorrekturmodus ist auch bekannt, wie viele davon FKCW sind und wie viele reine DCW.\\
+Die CW werden nun wieder von rechts unten aus Block für Block ausgelesen und zu dem langen Bit-String zusammengesetzt. Der aufmerksame Leser wird sich noch erinnern, dass die ersten 4 Bit von links des langen Strings die Information über den verwendeten Betriebsmodus des QR-Codes enthalten.\\
+Wenn der Modus bekannt ist, ist auch bekannt, wie viele der darauf folgenden Bit die Anzahl der codierten Zeichen repräsentieren (siehe Tabelle~\ref{tab:encodenumberofcharacters}). Nun werden die Bits bis zum Auftauchen des Terminators in Blöcke entsprechend dem Modus geteilt und aus dem Binärformat zurück ins ursprünglich verwendete Format gewandelt.
+     
 \pagebreak
