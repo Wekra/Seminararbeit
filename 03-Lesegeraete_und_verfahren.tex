@@ -45,4 +45,11 @@ In diesem Detektor werden nun die unterschiedlichen Intensitäten des auftreffen
 \end{figure}
 \footnotetext{Quelle: \cite[67]{DatalogicScanning2007}}
 
+\subsection{Lesefehler}
+Da Barcodes im Allgemeinen auf Flächen gedruckt werden, die in irgendeiner Weise mechanisch stark beansprucht werden, ist es sehr wahrscheinlich, dass sie im Laufe ihrer Lebensdauer beschädigt werden, kaputt gehen oder einfach nur verschmutzen. Um im den Fällen der Beschädigung und Verschmutzung noch gewährleisten zu können, dass die Daten trotzdem noch verarbeitet werden können, hat man in der Industrie ein paar Tricks entwickelt.
+
+\textbf{Fehlerkorrektur in den Codes:} Viele Barcodes haben in ihrer Codierung schon einen mehr oder weniger mächtigen Fehlererkennungs- oder Fehlerkorrigierenden Algorithmus eingebaut. Das reicht von einfachen Prüfziffern wie zum Beispiel bei Code128, der dadurch einen Fehler korrigieren kann, bis hin zu komplexen Algorithmen wie dem Reed-Solomon-Algorithmus, der z.B. im QR- oder auch Aztec-Code eingesetzt wird und in der Lage ist, den Code auch noch bei einer Beschädigung von bis zu 30 oder 40\% des Datenbereichs komplett zu rekonstruieren. 
+
+\textbf{Tricks beim Lesen:} Viele Lesegeräte wenden kleine Tricks an, um ihren Lesebereich zu vergrößern und dadurch zum Beispiel im Falle einer Verunreinigung den Code doch ohne Fehler lesen zu können. Dies wird z.B. durch Spiegelräder, die entweder mit leichtem Winkelversatz der Spiegel oder bewusst schief auf ihrer Motorwelle montiert werden. So erhält man beispielsweise bei 8 Spiegelflächen 5 Scanlinien, die durch ihrer unterschiedlichen Positionen einen größeren Scanbereich abdecken. Eine andere Möglichkeit, einen solchen vergrößerten Scanbereich zu erreichen ist das verbauen eines Schwingspiegels vor dem Scanner, der den Scanstrahl zyklisch ablenkt.
+
 \pagebreak
